@@ -1,0 +1,27 @@
+---
+fxpress:
+  environment:
+    "xxx"
+
+aws-ebs-csi-driver:
+  enableVolumeResizing: true
+  enableVolumeSnapshot: true
+  node:
+    tolerateAllTaints: true
+  controller:
+    serviceAccount:
+      create: false
+
+secrets-store-csi-driver:
+  syncSecret:
+    enabled: true
+  linux:
+    tolerations:
+      - key: ""
+        operator: "Exists"
+
+aws-load-balancer-controller:
+  serviceAccount:
+    create: false
+    name: aws-load-balancer-controller
+  clusterName: "FXPress-xxx"
