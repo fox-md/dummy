@@ -1,0 +1,6 @@
+fxpress:
+  environment:
+    "test"
+
+aws-load-balancer-controller:
+  clusterName: "test"
